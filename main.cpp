@@ -13,7 +13,7 @@ int main() {
 	FactoryMethod	factoryMethod;
 	try {
 		a = factoryMethod.createOperand(Int8, "42");
-		b = factoryMethod.createOperand(Int8, "jh");
+		b = factoryMethod.createOperand(Int16, "100");
 		std::cout << (*a + *b)->toString() << std::endl;
 	}
 	catch (std::exception &e)

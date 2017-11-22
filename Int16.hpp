@@ -1,38 +1,38 @@
 //
-// Created by Serhii Protsenko on 11/20/17.
+// Created by Serhii Protsenko on 11/22/17.
 //
 
-#ifndef ABSTRACTVM_INT8_HPP
-#define ABSTRACTVM_INT8_HPP
+#ifndef ABSTRACTVM_INT16_HPP
+#define ABSTRACTVM_INT16_HPP
 
-#include <iostream>
+
+#include <string>
 #include "ClassIOperand.hpp"
 
-
-class Int8 : public IOperand
+class Int16 : public IOperand
 {
 
 private:
-	char			_value;
+	short			_value;
 	eOperandType	eType;
 	std::string 	data;
 
-	Int8();
-	Int8 (Int8 const & rhs);
-	Int8 operator= (Int8 const & rhs);
+	Int16();
+	Int16 (Int16 const & rhs);
+	Int16 operator= (Int16 const & rhs);
 
 public:
 
 	class OverflowException: public std::exception
 	{
-		public:
-			const char* what() const throw();
+	public:
+		const char* what() const throw();
 	};
 
 	class UnderflowException: public std::exception
 	{
-		public:
-			const char* what() const throw();
+	public:
+		const char* what() const throw();
 	};
 
 	class IncorrectInputException: public std::exception
@@ -42,11 +42,11 @@ public:
 	};
 
 
-	explicit Int8(char a);
-	explicit Int8(std::string const & str);
-	~Int8();
+	explicit Int16(short a);
+	explicit Int16(std::string const & str);
+	~Int16();
 
-	char				getValue() const;
+	short				getValue() const;
 
 	int 			getPrecision(void) const;
 	eOperandType 	getType(void) const;
@@ -57,9 +57,10 @@ public:
 	// IOperand const * operator / (IOperand const & rhs) const;
 	// IOperand const * operator % (IOperand const & rhs) const;
 
-	 std::string const & toString(void) const;
+	std::string const & toString(void) const;
 
 };
 
 
-#endif //ABSTRACTVM_INT8_HPP
+
+#endif //ABSTRACTVM_INT16_HPP
