@@ -1,0 +1,21 @@
+push int8(15)
+push float(100.0)
+mul
+dump
+push float(200.0);
+push double(50.0);
+div
+dump
+exit
+
+
+;push (int8|int16|int32|float|double)(n)
+;assert (int8|int16|int32|float|double)(n)
+;pop
+;add
+;sub
+;mul
+;div
+;mod
+;print
+;dump

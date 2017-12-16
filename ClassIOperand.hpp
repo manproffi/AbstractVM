@@ -9,6 +9,12 @@
 
 enum eOperandType { Int8, Int16, Int32, Float, Double };
 
+typedef struct limits
+{
+	double max[5];
+	double min[5];
+}			t_type;
+
 class IOperand {
 
 public:
@@ -16,11 +22,11 @@ public:
 	virtual eOperandType 	getType( void ) const = 0;
 
 	virtual	IOperand 	const * operator+(IOperand const & ref) const = 0;
-//	virtual	IOperand 	const * operator-(IOperand const & ref) const = 0;
-//	virtual	IOperand 	const * operator*(IOperand const & ref) const = 0;
-//	virtual	IOperand 	const * operator/(IOperand const & ref) const = 0;
-//	virtual	IOperand 	const * operator%(IOperand const & ref) const = 0;
-//
+	virtual	IOperand 	const * operator-(IOperand const & ref) const = 0;
+	virtual	IOperand 	const * operator*(IOperand const & ref) const = 0;
+	virtual	IOperand 	const * operator/(IOperand const & ref) const = 0;
+	virtual	IOperand 	const * operator%(IOperand const & ref) const = 0;
+
 	virtual std::string const & toString( void ) const = 0;
 
 	virtual ~IOperand( void ) {}

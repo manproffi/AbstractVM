@@ -14,11 +14,16 @@ private:
 
 	IOperand const * createInt8( std::string const & value ) const;
 	IOperand const * createInt16( std::string const & value ) const;
-//	IOperand const * createInt32( std::string const & value ) const;
-//	IOperand const * createIntFloat( std::string const & value ) const;
-//	IOperand const * createIntDouble( std::string const & value ) const;
+	IOperand const * createInt32( std::string const & value ) const;
+	IOperand const * createFloat( std::string const & value ) const;
+	IOperand const * createDouble( std::string const & value ) const;
+
+	FactoryMethod(FactoryMethod const &);
+	FactoryMethod &operator=(FactoryMethod const &);
 
 public:
+	~FactoryMethod();
+	FactoryMethod();
 
 	IOperand const * createOperand( eOperandType type, std::string const & value ) const;
 
